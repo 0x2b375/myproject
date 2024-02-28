@@ -125,3 +125,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MQTT_SERVER = 'b37.mqtt.one'
+MQTT_PORT = 1883
+MQTT_KEEPALIVE = 60
+MQTT_USER = '0aefjk5643'
+MQTT_PASSWORD = '4789cghmvz'
