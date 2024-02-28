@@ -1,11 +1,14 @@
 import paho.mqtt.client as mqtt
 from django.conf import settings
 
-def on_connect(client, userdata, flags, reason_code, properties):
-    print(f"Connected with result code {reason_code}")
-    # Subscribing in on_connect() means that if we lose the connection and
-    # reconnect then subscriptions will be renewed.
-    client.subscribe("0aefjk5643/")
+def on_connect(mqtt_client, userdata, flags, rc, properties):
+  if rc == 0:
+    print(f"Connected successfully!")
+    mqtt_client.subscribe("0aefjk5643/")
+  else:
+    print('Failed to connect!')    
+
+   
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
