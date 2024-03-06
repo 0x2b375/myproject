@@ -4,7 +4,7 @@ from django.conf import settings
 def on_connect(mqtt_client, userdata, flags, rc, properties):
   if rc == 0:
     print(f"Connected successfully!")
-    # mqtt_client.subscribe("0aefjk5643/")
+    mqtt_client.subscribe("0aefjk5643/")
   else:
     print('Failed to connect!')    
 
