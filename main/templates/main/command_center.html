@@ -59,7 +59,6 @@
     </style>
   </head>
   <body class="mb-0" style="background-color: var(--clr-bg)">
-    <h1 class="mb-5 h-2">IoT Command Center</h1>
     <nav
       class="navbar mb-0 navbar-expand-lg"
       style="
@@ -70,7 +69,7 @@
       <div class="container-fluid">
         <a
           class="navbar-brand"
-          href="#"
+          href="/"
           style="margin-left: 40px; font-size: 40px; font-weight: bold"
         >
           <span
@@ -95,15 +94,6 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-                style="color: #ffffff; margin-left: 40px"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
                 class="nav-link"
                 href="#"
                 style="color: #ffffff; margin-left: 15px"
@@ -111,8 +101,8 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #ffffff; margin-left: 15px"
-                >Contact Us</a
+              <a class="nav-link" href="{% url 'cmd-center' %}" style="color: #ffffff; margin-left: 15px"
+                >Command Center</a
               >
             </li>
           </ul>
@@ -135,6 +125,7 @@
         </div>
       </div>
     </nav>
+    <h1 class="m-5" style="color: #ffbade">IoT Command Center</h1>
   </body>
   <section class="bd-2" style="border-top: 0.5px solid var(--clr-border)">
     <footer class="text-center p-4" style="color: #ffffff">
