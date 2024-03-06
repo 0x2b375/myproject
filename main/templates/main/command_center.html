@@ -101,7 +101,10 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'cmd-center' %}" style="color: #ffffff; margin-left: 15px"
+              <a
+                class="nav-link"
+                href="{% url 'cmd-center' %}"
+                style="color: #ffffff; margin-left: 15px"
                 >Command Center</a
               >
             </li>
@@ -126,84 +129,21 @@
       </div>
     </nav>
     <h1 class="m-5" style="color: #ffbade">IoT Command Center</h1>
-  </body>
-  <section class="bd-2" style="border-top: 0.5px solid var(--clr-border)">
-    <footer class="text-center p-4" style="color: #ffffff">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5
-              class="text-uppercase"
-              style="font-weight: bold; font-size: 30px"
-            >
-              About Us
-            </h5>
-
-            <p style="color: #737373">This is an IoT platform for management</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5
-              class="text-uppercase"
-              style="font-weight: bold; font-size: 30px"
-            >
-              Sensors
-            </h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Temperature</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Gas</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Humidity</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Ultrasonic</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Motion</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >LDR</a
-                >
-              </li>
-            </ul>
-          </div>
+    <div>
+      <form action="{% url 'cmd-submit' %}" method="POST" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="your_text" class="text-white m-2"
+            >Text you wanna send</label
+          >
         </div>
-      </div>
-    </footer>
-  </section>
+        <input type="text" name="your_text" id="your_text" class="m-2" />
+        <button type="submit" class="btn btn-primary btn-sm mb-1">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -10,3 +10,10 @@ def index(request):
 
 def command_center(request):
   return render(request, 'main/command_center.html')
+
+def command_submit(request):
+  if request.method == "POST":
+    cmd = request.POST.get("your_text")
+    mqtt_client.publish('0aefjk5643/', cmd)
+    
+  return render(request, 'main/command_center.html')
