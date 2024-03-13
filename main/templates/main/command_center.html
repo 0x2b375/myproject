@@ -128,9 +128,12 @@
         </div>
       </div>
     </nav>
-    <h1 class="m-5" style="color: #ffbade">IoT Command Center</h1>
+    <h1 class="m-5">
+      <span style="color: #ffbade">IoT</span>
+      <span style="color: white">Command Center</span>
+    </h1>
     <div>
-      <form action="{% url 'cmd-submit' %}" method="POST" class="mt-4">
+      <form action="{% url 'cmd-submit' %}" method="POST" class="m-5">
         {% csrf_token %}
         <div class="form-group">
           <label for="your_text" class="text-white m-2"
