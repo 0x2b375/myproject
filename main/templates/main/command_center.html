@@ -30,9 +30,11 @@
 
       .styling {
         display: flex;
-        justify-content: center;
+        flex-direction: column; 
         align-items: center;
-        height: 100vh;
+        justify-content: center; 
+        min-height: 100vh;
+        padding-top: 50px; 
       }
 
       .container {
@@ -74,13 +76,13 @@
       }
     </style>
   </head>
-  <body class="mb-0" style="background-color: var(--clr-bg)">
+  <body class="mb-0">
     <div class="styling">
+      <h1 class="m-5" style="text-align: center">
+        <span style="color: #ffbade">IoT</span>
+        <span style="color: white">Command Center</span>
+      </h1>
       <div class="container">
-        <h1 class="m-5" style="text-align: center">
-          <span style="color: #ffbade">IoT</span>
-          <span style="color: white">Command Center</span>
-        </h1>
         <form action="{% url 'cmd-submit' %}" method="POST">
           {% csrf_token %}
           <div class="form-group">
