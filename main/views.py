@@ -48,3 +48,4 @@ def delete_sensor(request, sensor_id):
       sensor = get_object_or_404(Sensor, pk=sensor_id)
       sensor.delete()
       return redirect('sensor_list')
+ 

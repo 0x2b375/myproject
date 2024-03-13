@@ -5,3 +5,5 @@ class SensorForm(forms.ModelForm):
     class Meta:
         model = Sensor
         fields = ['name', 'image', 'mqtt_topic']
+
+        

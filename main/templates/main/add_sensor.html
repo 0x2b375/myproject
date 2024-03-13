@@ -123,7 +123,15 @@
         {% csrf_token %}
 
         <label for="id_name" style="color: white; font-size: 20px">Name:</label>
-        <input type="text" name="name" maxlength="100" required id="id_name" />
+        <input
+          type="text"
+          name="name"
+          maxlength="100"
+          required
+          id="id_name"
+          placeholder="name"
+          style="font-style: italic"
+        />
         <br />
         <label for="id_topic" style="color: white; font-size: 20px"
           >Topic:</label
@@ -133,7 +141,9 @@
           name="mqtt_topic"
           maxlength="100"
           required
+          placeholder="topic"
           id="id_topic"
+          style="font-style: italic"
         />
         <br />
         <label for="id_image" class="custom-file-upload">Choose Image</label>
