@@ -164,6 +164,22 @@
                 >Command Center</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/admin"
+                style="color: #ffffff; margin-left: 15px"
+                >Admin</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{% url 'sensor_list' %}"
+                style="color: #ffffff; margin-left: 15px"
+                >Sensors</a
+              >
+            </li>
           </ul>
           <form class="d-flex mt-3 input-group w-auto mb-3">
             <input
@@ -187,19 +203,22 @@
   </body>
   <div class="styling">
     <div class="container">
-      <h1>Add Movie</h1>
+      <h1><span>Add</span> <span style="color: white">Sensor</span></h1>
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <label for="id_title" style="color: white; font-size: 20px"
-          >Name:</label
+        <label for="id_name" style="color: white; font-size: 20px">Name:</label>
+        <input type="text" name="name" maxlength="100" required id="id_name" />
+        <br />
+        <label for="id_topic" style="color: white; font-size: 20px"
+          >Topic:</label
         >
         <input
           type="text"
-          name="title"
+          name="mqtt_topic"
           maxlength="100"
-          required=""
-          id="id_title"
+          required
+          id="id_topic"
         />
         <br />
         <label for="id_image" class="custom-file-upload">Choose Image</label>
@@ -209,7 +228,7 @@
           name="image"
           id="id_image"
         />
-        <span id="imageName"></span>
+        <span id="imageName" style="color: white; margin-bottom: 20px"></span>
 
         <button type="submit" id="submit-button" style="color: white">
           Add Sensor

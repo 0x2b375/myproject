@@ -18,43 +18,58 @@
       :root {
         --clr-bg: #201f31;
         --clr-text: #ffbade;
-        --clr-text-text: #e3e3e5;
         --clr-border: #373646;
         --clr-card: #2b2a3c;
-
-        -ff-outfit: "Outfit", sans-serif;
       }
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
+      body {
+        background-color: var(--clr-bg);
+        color: var(--clr-text);
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
+      .styling {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
-      html {
-        font-family: var(--ff-outfit);
-        line-height: 1.7;
-        font-weight: 400;
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: var(--clr-card);
+        border: 1px solid var(--clr-border);
+        border-radius: 10px;
       }
 
-      .img-thumbnail {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+      .form-group {
+        margin-bottom: 1rem;
       }
 
-      @media (min-width: 768px) {
-        .img-thumbnail {
-          font-size: 3.5rem;
-        }
+      label {
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: calc(100% - 10px);
+      }
+
+      button[type="submit"] {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #5f958e;
+        color: white;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #37655f;
       }
     </style>
   </head>
@@ -108,6 +123,22 @@
                 >Command Center</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/admin"
+                style="color: #ffffff; margin-left: 15px"
+                >Admin</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{% url 'sensor_list' %}"
+                style="color: #ffffff; margin-left: 15px"
+                >Sensors</a
+              >
+            </li>
           </ul>
           <form class="d-flex mt-3 input-group w-auto mb-3">
             <input
@@ -128,23 +159,23 @@
         </div>
       </div>
     </nav>
-    <h1 class="m-5">
-      <span style="color: #ffbade">IoT</span>
-      <span style="color: white">Command Center</span>
-    </h1>
-    <div>
-      <form action="{% url 'cmd-submit' %}" method="POST" class="m-5">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="your_text" class="text-white m-2"
-            >Text you wanna send</label
-          >
-        </div>
-        <input type="text" name="your_text" id="your_text" class="m-2" />
-        <button type="submit" class="btn btn-primary btn-sm mb-1">
-          Submit
-        </button>
-      </form>
+    <div class="styling">
+      <div class="container">
+        <h1 class="m-5" style="text-align: center">
+          <span style="color: #ffbade">IoT</span>
+          <span style="color: white">Command Center</span>
+        </h1>
+        <form action="{% url 'cmd-submit' %}" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="your_text" style="font-size: 20px; color: white"
+              >Text you wanna send:</label
+            >
+            <input type="text" name="your_text" id="your_text" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </body>
   <script
