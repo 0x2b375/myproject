@@ -1,4 +1,6 @@
-<html>
+{% include 'main/header.html' %}
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>IoT Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,13 +10,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* Your CSS styles here */
       :root {
         --clr-bg: #201f31;
         --clr-text: #ffbade;
@@ -43,407 +44,196 @@
         font-weight: 400;
       }
 
-      .img-thumbnail {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23373b48" viewBox="0 0 16 16"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L6.707 8l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z"/></svg>');
       }
 
-      @media (min-width: 768px) {
-        .img-thumbnail {
-          font-size: 3.5rem;
-        }
+      .carousel-control-next-icon {
+        transform: scaleX(-1);
+      }
+
+      .carousel-item img {
+        max-height: 500px; /* Adjust the maximum height as needed */
+        width: auto;
+        margin: auto;
       }
     </style>
   </head>
   <body class="mb-0" style="background-color: var(--clr-bg)">
-    <nav
-      class="navbar mb-0 navbar-expand-lg"
-      style="
-        border-bottom: 0.5px solid var(--clr-border);
-        background-color: var(--clr-bg);
-      "
+    <!-- Carousel Section -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
     >
-      <div class="container-fluid">
-        <a
-          class="navbar-brand"
-          href="{% url 'index' %}"
-          style="margin-left: 40px; font-size: 40px; font-weight: bold"
-        >
-          <span
-            class=""
-            style="color: var(--clr-text); font-family: var(--ff-outfit)"
-            >IoT</span
-          >
-          <span class="" style="color: white">Dashboard</span>
-        </a>
-        <button
-          data-mdb-collapse-init
-          class="navbar-toggler"
-          type="button"
-          data-mdb-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{% url 'add_sensor' %}"
-                style="color: #ffffff; margin-left: 15px"
-                >Add Sensor</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{% url 'cmd-center' %}"
-                style="color: #ffffff; margin-left: 15px"
-                >Command Center</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="/admin"
-                style="color: #ffffff; margin-left: 15px"
-                >Admin</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{% url 'sensor_list' %}"
-                style="color: #ffffff; margin-left: 15px"
-                >Sensors</a
-              >
-            </li>
-          </ul>
-          <form class="d-flex mt-3 input-group w-auto mb-3">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              data-mdb-ripple-init
-              class="btn btn-outline-secondary"
-              type="button"
-              data-mdb-ripple-color="dark"
-            >
-              Search
-            </button>
-          </form>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="static/main/img/gas.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
         </div>
+        <div class="carousel-item">
+          <img
+            src="static/main/img/humidity.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="static/main/img/ldr.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="static/main/img/motion.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="static/main/img/temp.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="static/main/img/ultrasonic.jpg"
+            class="d-block w-100"
+            alt="..."
+            draggable="false"
+          />
+        </div>
+        <!-- Add more carousel items as needed -->
       </div>
-    </nav>
-  </body>
-  <div class="album py-5">
-    <div class="container">
-      <div
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
-        style="margin-bottom: 5rem; margin-top: 3.2rem"
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
       >
-        <div class="col">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/temp.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col" style="gap: 50px">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/humidity.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px; width: 100%"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/gas1.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/ultrasonic.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/motion.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm" style="background: var(--clr-card)">
-            <img
-              src="static/main/img/ldr.jpg"
-              draggable="false"
-              class="card-img-top img-thumbnail img-fluid"
-              style="height: 225px"
-              alt="..."
-            />
-            <div class="card-body">
-              <p class="card-text" style="color: var(--clr-text-text)">
-                Proident consectetur excepteur occaecat proident adipisicing
-                sint.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    View
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-secondary"
-                    style="color: var(--clr-text-text)"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </div>
-  <section class="bd-2" style="border-top: 0.5px solid var(--clr-border)">
-    <footer class="text-center p-4" style="color: #ffffff">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5
-              class="text-uppercase"
-              style="font-weight: bold; font-size: 30px"
-            >
-              About Us
-            </h5>
 
-            <p style="color: #737373">This is an IoT platform for management</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5
-              class="text-uppercase"
-              style="font-weight: bold; font-size: 30px"
-            >
-              Sensors
-            </h5>
+    <!-- Description Section -->
+    <div class="container py-5" style="color: white">
+      <h1 class="text-center mb-4">Welcome to IoT Dashboard</h1>
+      <p class="lead text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam.
+      </p>
+    </div>
 
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Temperature</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Gas</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Humidity</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Ultrasonic</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >Motion</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#!"
-                  class="text-decoration-none"
-                  style="color: var(--clr-text-text)"
-                  >LDR</a
-                >
-              </li>
-            </ul>
+    <!-- Footer Section -->
+    <section class="bd-2" style="border-top: 0.5px solid var(--clr-border)">
+      <footer class="text-center p-4" style="color: #ffffff">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5
+                class="text-uppercase"
+                style="font-weight: bold; font-size: 30px"
+              >
+                About Us
+              </h5>
+
+              <p style="color: #737373">
+                This is an IoT platform for management
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5
+                class="text-uppercase"
+                style="font-weight: bold; font-size: 30px"
+              >
+                Sensors
+              </h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >Temperature</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >Gas</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >Humidity</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >Ultrasonic</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >Motion</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#!"
+                    class="text-decoration-none"
+                    style="color: var(--clr-text-text)"
+                    >LDR</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-  </section>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
+      </footer>
+    </section>
+
+    <!-- Bootstrap Bundle JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
