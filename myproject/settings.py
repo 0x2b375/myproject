@@ -132,3 +132,9 @@ MQTT_PORT = 1883
 MQTT_KEEPALIVE = 60
 MQTT_USER = '0aefjk5643'
 MQTT_PASSWORD = '4789cghmvz'
+
+ENDPOINT = "a17h1l6mwhc3vh-ats.iot.ap-northeast-1.amazonaws.com"
+CLIENT_ID = "891377292691"
+PATH_TO_CERT = "certificates/a5ed70146186412b5d1a1cfbfd10aeea3fd0b96b0d85d0548648791d5667763a-certificate.pem.crt"
+PATH_TO_KEY = "certificates/a5ed70146186412b5d1a1cfbfd10aeea3fd0b96b0d85d0548648791d5667763a-private.pem.key"
+PATH_TO_ROOT = "certificates/AmazonRootCA1.pem"
