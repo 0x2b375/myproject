@@ -6,7 +6,7 @@ import sys
 import threading
 import time
 import json
-from command_line_utils import CommandLineUtils
+from myproject.main.command import CommandLineUtils
 
 # This sample uses the Message Broker for AWS IoT to send and receive messages
 # through an MQTT connection. On startup, the device connects to the server,

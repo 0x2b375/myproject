@@ -139,4 +139,4 @@ AWS_IOT_CERT = 'C:/Users/Acer Nitro 5/Downloads/IoT Cloud computing/django-lab/m
 AWS_IOT_KEY = 'C:/Users/Acer Nitro 5/Downloads/IoT Cloud computing/django-lab/myproject/main/certificates/a5ed70146186412b5d1a1cfbfd10aeea3fd0b96b0d85d0548648791d5667763a-private.pem.key'
 AWS_IOT_CA = 'C:/Users/Acer Nitro 5/Downloads/IoT Cloud computing/django-lab/myproject/main/certificates/AmazonRootCA1.pem'
 AWS_IOT_CLIENT_ID = '891377292691'
-AWS_IOT_INPUT_COUNT = 5
+AWS_IOT_INPUT_COUNT = 1
